@@ -1,0 +1,49 @@
+Proceso de instalación.
+Apache
+
+Ejecuta el siguiente comando
+
+sudo apt install apache2
+NGINX
+
+Ejecuta el siguiente comando
+
+sudo apt install nginx nginx-extras
+
+sudo apt install nginx nginx-extras
+
+sudo netstat -tulpn
+
+Para verificar si los servicios está corriendon se debe ejecutar los siguientes comandos:
+systemctl status apache2
+systemctl status nginx
+
+Si se siguió el orden de instalación, NGINX no debe estar ejecutándose, pues por defecto intentará levantarse en el puerto 80, el cual ya se encuentra ocupado por Apache, para ello cambiaremos el puerto de Apache al puerto alterno http 8080.
+
+sudo nano /etc/apache2/ports.conf
+
+A continuación tenemos que cambiar el puerto al 8080, para esto se debe cambiar la instrucción Listen 8080 dentro del documento ports.conf.
+
+Después abrimos nuestro archivo de configuración de Apache sudo nano /etc/apache2/sites-available/000-default.conf y cambiamos el virtualhost a 8080 <VirtualHost *:8080>
+
+Después realizamos el proceso de detener apache2 y volverlo a encender, con los siguientes comandos
+sudo systemctl restart apache2.
+systemctl status apache2
+systemctl status nginx.
+Ambos sitios deberían estar activos y en ejecución.
+Paso siguiente, dirígete al archivo de configuración de NGINX donde te asegurarás que exista una directiva en el location llamada proxy_pass que contenga lo siguiente:
+
+proxy_pass http://127.0.0.1:8080;
+3.png
+
+Si por alguna razón el servidor Apache no se encuentra en la misma máquina, debemos cambiar la dirección IP y el puerto respectivo.
+
+Apache tiene un comando para activar sitios que es a2ensite que recibe como parámetro el archivo de configuración definido en /etc/apache2/sites-available. NGINX no cuenta con este comando, motivo por el cual se tiene un enlace blando, es decir, cuando creemos un archivo de configuración en /etc/nginx/sites-available debemos ejecutar sudo ln -s /etc/nginx/sites-available/configuracion_nginx /etc/nginx/sites-enabled/
+
+Apache también me permite deshabilitar sitios y agregar módulos
+
+sudo a2dissite 000-default
+
+sudo a2enmod rewrite headers env dir mime
+
+Si queremos activar letsecrypt en NGINX, debemos agregar una línea en el .htaccess en la ruta /var/www/html/nombre_host/.htaccess. La linea es SetEnvIf X-Forwarded-Proto https

@@ -1,0 +1,25 @@
+RESUMEN DE LA CLASE
+|
+Monitoreo de recursos del sistema
+|
+Comandos
+|
+|
+top: Muestra la siguiente información del sistema:
+
+    load average (carga promedio): Provee una representación en números del 1 al número de procesadores que tenga nuestro servidor del uso de los mismos.
+    Uso de la memoria
+    Cantidad de usuarios
+    Uso del CPU
+    Procesos
+    Etc
+
+free: Me muestra información sobre la memoria de mi sistema. Con el modificador -h la información es más legible para un humano
+du: Muestra información sobre el disco duro. Con el modificador -hsc y un directorio especificado muestra el tamaño de ese directorio
+htop: Funciona como top pero funciona de forma más intuitiva
+|
+Comandos útiles
+|
+cat /proc/cpuinfo | grep "processor": Muestra información sobre el CPU
+sudo ps auxf | sort -nr -k 3 | head -5: Muestra los 5 procesos que más uso hacen del CPU
+sudo ps auxf | sort -nr -k 4 | head -5: Muestra los 5 procesos que más uso hacen de la memoria RAM

@@ -1,0 +1,26 @@
+RESUMEN DE LA CLASE
+|
+Los logs, nuestros mejores amigos
+|
+|
+Comandos
+|
+find [ruta]: Buscar algo en el sistema operativo.
+Modificadores:
+
+    -type: Indica que tipo estamos buscando; archivos, directorios y enlaces
+    -name: Indica el nombre de lo que estamos buscando
+    -iname: Indica el nombre de lo que estamos buscando, pero sin tener en cuenta mayúsculas y minúsculas
+    !: Niega la expresión que buscamos (es decir, busca lo contrario)
+    -mtime: Muestra archivos con cambios en los últimos n minutos
+
+grep [string] [archivo]: Busca una cadena de caracteres o expresión regular en un archivo determinado. Si ejecutamos por ejemplo algo como comando | grep [string] vamos a filtrar el resultado de un comando por la cadena o regex que especifiquemos
+awk: Es un lenguaje que nos ayuda a filtrar patrones en un archivo, organizarlos y darles formato
+|
+|
+Comandos útiles
+|
+find /var/log/ -iname "*.log" -type f: Muestra los archivos de log que tenemos en el sistema
+sudo find /etc/ -mtime 10 2: Muestra los archivos de configuración que tuvieron salidas de error en los últimos diez minutos
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr: Muestra las IP’s que se conectaron con nuestro servidor nginx
+awk '{print $9}' /var/log/nginx/access.log | sort | uniq -c | sort -nr: Muestra los errores que surgieron en nuestro servidor nginx

@@ -1,0 +1,32 @@
+Permisos estan compuestos por 10 caracteres
+- rw- rw- r-- 
+
+1er caracter corresponde al tipo de archivo
+'-' = archivo
+'d' = directorio
+'l' = enlace simbólico
+
+Asignación de permisos en grupos de 3
+'u' = usuarios (corresponde caracter del 2 al 4)
+'g' = grupos (corresponde caracter del 5 al 7)
+'o' = otros (corresponde caracter del 8 al 10)
+'a' = todos
+
+Tipo de permisos
+'r' = lectura
+'w' = escritura
+'x' = ejecución
+'-' = sin permiso
+
+'+' añade permisos
+'-' quita permisos
+
+Formato octal
+'0' = (0+0+0) = Sin permisos = ---
+'1' = (0+0+1) = Ejecución = --X
+'2' = (0+2+0) = Escritura = -w-
+'4' = (4+0+0) = Lectura = r--
+'7' = (4+2+1= = Eje, Esc, Lec = rwx
+
+chmod | cambiar permisos (chmod u-r archivo.txt), forma rapida asignar permisos a todos 'chmod +x'
+chown | (Change Owner), cambia la propiedad d

@@ -1,0 +1,77 @@
+RESUMEN DE LA CLASE
+|
+Monitoreo de MySQL con Nagios
+|
+|
+Instrucciones
+|
+
+    Instalar MySQL Server
+
+sudo apt install mysql-server
+
+    Obtener el password de MySQL
+
+sudo vim /etc/mysql/debian.cnf
+
+    Iniciar sesión en MySQL
+
+mysql -u debian-sys-maint -p
+
+    Asegurar el server de la base de datos
+
+sudo mysql_secure_installation
+
+    Verificar que Apache esté funcionando
+
+systemctl status apache2
+
+    Activar módulos rewrite y cgi
+
+sudo a2enmod rewrite cgi
+
+    Reiniciar Apache
+
+sudo systemctl restart apache2
+
+    Crear un usuario para Nagios
+
+sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin 
+
+    Entrar a Nagios en nuestro navegador web, escribiendo como dirección:
+
+direccion_ip_del_servidor:8080/nagios
+
+Es muy importante notar que estamos ingresando en el puerto 8080, ya que ahí es donde está funcionando Apache
+
+    Instalar las siguientes dependencias:
+
+sudo apt install -y libmcrypt-dev make libssl-dev bc gawk dc build-essential snmp libnet-snmp-perl gettext
+
+    Si no instalaste los plugins en las clases anteriores, debes hacer lo siguiente: en primer lugar, posicionado en tu home, descargarlos
+
+wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz -0 plugins.tar.gz -O plugins.tar.gz
+
+    Desempaquetar y descomprimir el archivo de plugins
+
+tar xzvf plugins.tar.gz
+
+    Ya en la carpeta de plugins que se creo con el paso anterior, configurar los mismos
+
+sudo ./config
+
+    Verificar que no existan errores ni warnings
+
+sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+
+    Reiniciar Nagios
+
+sudo systemctl restart nagios
+
+    En nuestro home, descargar el plugin de MySQL
+
+wget https://labs.consol.de/assets/downloads/nagios/check_mysql_health-2.2.2.tar.gz -O mysqlplugin.tar.gz
+
+    Desempaquetar y descomprimir el archivo del plugin
+
+tar xzvf mysqlplugin.tar.gz

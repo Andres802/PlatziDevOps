@@ -1,0 +1,27 @@
+RESUMEN DE LA CLASE
+|
+Análisis de los parámetros de red
+|
+Existen dos tipos de direcciones IP: Privadas y Públicas
+|
+|
+Comandos
+|
+ifconfig: Interface Configuration, muestra las tarjetas de red que tenemos y su direccionamiento específico
+ip a: IP Address Show, muestra las direcciones IP
+hostname: Como se identifica este equipo en la red
+route -n: Muestra cual es el dispositivo que me permite conectarme a internet
+nslookup: Muestra la dirección IP de un dominio determinado
+curl: Realiza consultas a un servidor
+wget: Permite descargar contenido de un servidor
+|
+|
+Comandos útiles
+|
+ip -4 a: Muestra las direcciones IPv4
+ip -6 a: Muestra las direcciones IPv6
+
+Para validar los puertos que tienen un proceso activo usamos:
+
+sudo netstat -tulpn
+

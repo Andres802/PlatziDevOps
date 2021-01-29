@@ -1,0 +1,22 @@
+RESUMEN DE LA CLASE
+|
+Las bases de bash
+|
+¿Qué es Bash? Es una shell de UNIX y el intérprete de comandos por defecto en la mayoría de distribuciónes GNU/Linux. Se pueden crear scripts, los cuales por convención terminan con la extensión .sh
+|
+
+    Definición de un intérprete para que lo que sigue se ejecute con Bash
+
+#!/bin/bash
+
+    Definición de una variable
+
+VARIABLE = "Hola mundo"
+
+    Impresión en pantalla
+
+echo $VARIABLE
+
+    Creación de un comentario
+
+# Comentario cualquiera

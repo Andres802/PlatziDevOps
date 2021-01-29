@@ -1,0 +1,21 @@
+RESUMEN DE LA CLASE
+|
+Arranque, detención y recarga de servicios
+|
+|
+Comandos
+|
+
+    sudo systemctl status servicio: Estado de un servicio
+    sudo systemctl enable servicio: Habilita un servicio
+    sudo systemctl disable servicio: Deshabilita un servicio
+    sudo systemctl start servicio: Enciende un servicio
+    sudo systemctl stop servicio: Apaga un servicio
+    sudo systemctl restart servicio: Reinicia un servicio
+    sudo systemctl list-units -t service --all: Lista los servicios del sistema
+    sudo journalctl -fu servicio: Muestra el log de un servicio
+    sudo journalctl --disk-usage: Muestra cuanto pesan los logs en el sistema operativo
+    sudo journalctl --list-boots: Muestra los booteos de la computadora
+    sudo journalctl -p critic|notice|info|warning|error: Muestra mensajes de determinada categoría de nuestros logs
+    sudo journalctl -o json: Muestra los logs en formato json
+

@@ -1,0 +1,22 @@
+RESUMEN DE LA CLASE
+|
+Manejo y monitoreo de procesos y recursos del sistema
+|
+|
+Comandos
+|
+ps: Muestra los procesos corriendo. Modificadores:
+
+    aux: Muestra todos los procesos
+
+jobs: Al igual que el comando anterior, muestra los procesos. A diferencia de ps, es un comando interno de la terminal
+fg: Abre un proceso que estaba pausado
+nohup: Genera un archivo llamado “nohup.out” que muestra toda la información que produjo un proceso
+grep: Nos ayuda a filtrar el resultado de un comando o el contenido de un archivo dependiendo de las palabras (o incluso expresión regular) que le indiquemos
+|
+|
+Símbolos especiales
+|
+"|" Pipe: Envia el standard output de un comando al standard input de otro.
+"&" Ampersand: Envia un proceso al background
+"./": Ejecuta un archivo

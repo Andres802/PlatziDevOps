@@ -1,0 +1,26 @@
+RESUMEN DE LA CLASE
+|
+Creando y manejando cuentas de usuario en el sistema operativo
+|
+|
+Comandos
+|
+sudo useradd usuario: Crea un usuario
+sudo adduser usuario: Crea un usuario y solicita un password, además de otros datos
+sudo userdel usuario: Borra un usuario
+history: Muestra todos los comandos usados anteriormente
+sudo usermod: Modifica un usuario
+|
+|
+Comandos útiles
+|
+cat /usr/sbin/nombre_de_comando: Muestra el contenido de un comando
+
+Comandos
+|
+su - usuario: Switch User, cambia de usuario
+groups usuario: Muestra a que grupos pertenece cierto usuario
+sudo gpasswd -a usuario grupo: Agrega un usuario a un grupo
+sudo gpasswd -d usuario grupo: Quita a un usuario de un grupo
+usermod -aG grupo usuario: Agrega un usuario a un grupo
+sudo -l: Muestra que permisos tiene el usuario actual

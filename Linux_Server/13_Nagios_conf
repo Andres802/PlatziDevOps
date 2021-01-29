@@ -1,0 +1,50 @@
+RESUMEN DE LA CLASE
+|
+Configuración de Nagios
+|
+|
+Instrucciones
+|
+
+    Ya en la consola de MySQL, crear un usuario
+
+GRANT SELECT ON *.* TO 'nagios'@'localhost' IDENTIFIED BY 'nagiosplatziS14*';
+FLUSH PRIVILEGES; 
+
+    Configurar Nagios
+
+sudo vim /usr/local/nagios/etc/nagios.cfg
+
+#Ya dentro del archivo, agregar la siguiente linea:
+
+cfg_file=/usr/local/nagios/etc/objects/mysqlmonitoring.cfg
+
+    Crear comandos para hacer uso de Nagios
+
+sudo vim /usr/local/nagios/etc/objects/commands.cfg
+
+#Ya dentro del archivo, agregar las siguientes líneas:
+
+define command {
+	command_name check_mysql_health
+	command_line $USER1$/check_mysql_health -H $ARG4$ --username $ARG1$ --password $ARG2$ --port $ARG5$  --mode $ARG3$
+}
+
+    Crear el archivo que nombrarmos en la configuración en el archivo nagios.cfg
+
+sudo vim /usr/local/nagios/etc/objects/mysqlmonitoring.cfg
+
+#Ya en el archivo, agregar las siguientes líneas
+
+define service {
+	use local-service
+	host_name localhost
+	service_description MySQL connection-time
+	check_command check_mysql_health!nagios!nagiosplatziS14*!connection-time!127.0.0.1!3306!
+}
+
+OJO! En la clase hay un pequeño typo, como puede verse arriba, la directiva correcta es host_name y no hostname, les va a dar error si lo ponen de esta última forma
+
+    Reiniciar nagios
+
+sudo systemctl restart nagios

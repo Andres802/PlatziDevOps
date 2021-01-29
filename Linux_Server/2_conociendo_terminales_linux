@@ -1,0 +1,14 @@
+RESUMEN DE LA CLASE
+|
+Conociendo las terminales en linux
+|
+Terminales físicas: Están enumeradas del 1 al 6, siendo la séptima la que está potencialmente destinada a la interfaz gráfica
+|
+Comandos
+|
+chvt: Cambia de terminal
+tty: Muestra la terminal actual
+who: Muestra los usuarios conectados a nuestro sistema
+w: Hace lo mismo que el comando who pero muestra más información
+ps: Muestra los procesos corriendo. Con los modificadores -ft y tty podemos filtrar para ver las conexiones de los usuarios
+kill: Mata un proceso. Con el modificador -9 fuerzo el cierre del mismo

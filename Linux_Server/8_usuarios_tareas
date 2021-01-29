@@ -1,0 +1,32 @@
+RESUMEN DE LA CLASE
+|
+Administración de paquetes acorde a la distribución
+|
+|
+Ubuntu server
+|
+Repositorios: apt
+Extensión de paquetes: .deb
+|
+Comandos:
+|
+dpkg -l: Lista todos los deb instalados en la máquina
+dpkg -i paquete.deb: Instala un paquete
+dpkg -r paquete.deb: Desinstala un paquete
+dpkg-reconfigure paquete: Permite configurar nuevamente un paquete
+apt install paquete: Instala un paquete desde un repositorio
+apt search paquete: Busca un paquete en un repositorio
+|
+|
+CentOS
+|
+Repositorios: yum
+Extensión de paquetes: .rpm
+|
+Comandos:
+|
+rpm -qa: Lista todos los rpm instalados en la máquina
+rpm -i paquete.rpm: Instala un paquete
+rpm -e paquete.rpm: Desinstala un paquete
+yum install paquete: Instala un paquete desde un repositorio
+yum search paquete: Busca un paquete en un repositorio

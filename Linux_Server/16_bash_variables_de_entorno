@@ -1,0 +1,32 @@
+RESUMEN DE LA CLASE
+|
+Las variables y su entorno de ejecución
+|
+|
+Comandos
+|
+env: Muestra las variables del sistema operativo
+|
+|
+Variables de entorno
+|
+$PATH: Guarda las rutas donde se ubican los archivos binarios que pueden ejecutarse directamente en la consola
+|
+|
+Scripts útiles
+|
+
+    Verificar la cantidad de espacio en el S.O
+
+#!/bin/bash
+# Verificar la cantidad de espacio en el S.O
+# Desarrollado por Jhon Edison
+
+CWD=$(pwd)
+FECHA=$(date +"%F%T")
+echo $FECHA
+
+df -h | grep /dev > uso_disco_"$FECHA".txt
+df -h | grep /dev/sda2 >> uso_disco_"$FECHA".txt
+
+echo "Se ha generado un archivo en la ubicación $CWD"
