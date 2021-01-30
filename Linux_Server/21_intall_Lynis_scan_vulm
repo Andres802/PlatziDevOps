@@ -1,0 +1,10 @@
+RESUMEN DE LA CLASE
+|
+Lynis: Herramientas de auditoria de seguridad en Linux
+|
+|
+Comandos
+|
+
+    sudo lynis audit system: Realiza un escaneo del sistema operativo, mostrándonos sugerencias y el estado de peligro de ciertos detalles en nuestra distribución
+

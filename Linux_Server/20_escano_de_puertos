@@ -1,0 +1,11 @@
+RESUMEN DE LA CLASE
+|
+Escaneo de puertos con NMAP y NIKTO desde Kali Linux
+|
+|
+Comandos
+|
+
+    nmap -sV -sC -0 -oA nombre_de_archivo dirección_ip_del_servidor: Realiza un mapeo de la red
+    
+    nikto -h ip_del_host -o nombre_de_archivo: Escanea vulnerabilidades en un servidor

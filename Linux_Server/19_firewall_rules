@@ -1,0 +1,20 @@
+RESUMEN DE LA CLASE
+|
+El firewall y sus reglas
+|
+|
+Comandos
+|
+
+    sudo ufw status: Muestra el estado (activo/inactivo) y las reglas del firewall. Con el modificador numbered me muestra las reglas numeradas
+    sudo ufw allow puerto: Habilita un puerto
+    sudo ufw enable: Enciende el firewall
+    sudo ufw delete numero_de_regla: Borra una regla
+    sudo ufw allow from direccion_ip proto protocolo to any port puerto: Restringe las direcciones ip que pueden conectarse a cierto puerto. Recordar que SSH trabaja con el protocolo TCP
+    sudo ufw reset: Elimina todas las reglas
+    sudo ufw allow from "ip address" proto "tcp or udp" to any port "port number" "permitir ssh"
+|
+|
+Recomendación
+|
+Abrir al público únicamente el puerto 80 (http), 443 (https). Para un conjunto de IP’s específicas, habilitar el puerto 22 (ssh)
